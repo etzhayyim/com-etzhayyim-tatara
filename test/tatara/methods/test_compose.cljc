@@ -11,7 +11,7 @@
             [tatara.methods.analyze :as az]
             [tatara.methods.compose :as compose]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def root (.getParentFile actor-dir))
 (def seed (io/file actor-dir "data" "seed-plant-graph.kotoba.edn"))
 (def watari-seed (io/file root "watari" "data" "seed-craft-graph.kotoba.edn"))

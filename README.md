@@ -22,7 +22,7 @@ Charter Rider §2(c) reciprocity axis; Wellbecoming §1.13). Enforced by constru
 ## Run
 
 ```bash
-bb 20-actors/tatara/run_tests.clj
+bb test
 # Testing tatara.methods.test-analyze
 # Testing tatara.methods.test-kotoba
 # … (10 suites)
@@ -66,16 +66,17 @@ transit) and watatsuna (submarine-cable load) over the same keywords.
 |---|---|
 | `00-contracts/schemas/manufacturing-plant-ontology.kotoba.edn` | ontology (`:plant/* :hub/* :flow/* :concentration/*`) |
 | `data/seed-plant-graph.kotoba.edn` | bounded `:representative` seed |
-| `methods/analyze.cljc` | concentration / HHI / chokepoint / capacity engine |
-| `methods/kotoba.cljc` | content-addressed EAVT commit-DAG persistence |
-| `methods/autorun.cljc` | autonomous heartbeat → content-addressed commit-DAG (resume-safe) |
-| `methods/compose.cljc` → `resilience-composition.md` | cross-actor SSoT: 静 plants · 動 craft · 静-infra cable per chokepoint |
-| `methods/crosscheck.cljc` | measures :plant/operator ⇄ kabuto :company/id linkage (84%) + ingest worklist |
-| `methods/maturity.cljc` → `MATURITY.md` | generated maturity scorecard (R0→R1 checklist, can't drift) |
+| `src/tatara/methods/analyze.cljc` | concentration / HHI / chokepoint / capacity engine |
+| `src/tatara/methods/kotoba.cljc` | content-addressed EAVT commit-DAG persistence |
+| `src/tatara/methods/autorun.cljc` | autonomous heartbeat → content-addressed commit-DAG (resume-safe) |
+| `src/tatara/methods/compose.cljc` → `resilience-composition.md` | cross-actor SSoT: 静 plants · 動 craft · 静-infra cable per chokepoint |
+| `src/tatara/methods/crosscheck.cljc` | measures :plant/operator ⇄ kabuto :company/id linkage (84%) + ingest worklist |
+| `src/tatara/methods/maturity.cljc` → `MATURITY.md` | generated maturity scorecard (R0→R1 checklist, can't drift) |
 | `00-contracts/lexicons/com/etzhayyim/tatara/*.json` | write surface (registerPlant/registerHub/recordFlow/registerChokepoint) |
 | `methods/test_{analyze,kotoba,autorun,lexicons,crosscheck,maturity,seed-integrity,viz,compose,robustness}.cljc` | 56 tests / 5,095 assertions |
 | `viz/build_viz.cljc` | globe generator (derives all coords from the seeds) |
 | `viz/plant-globe.htm` · `viz/world-supply-globe.htm` | the (C) and (A) globes |
-| `manifest.jsonld` · `CLAUDE.md` | actor manifest + agent rules |
+| `manifest.edn` · `schema/schema.edn` | canonical actor contract |
+| `wire/manifest.jsonld` | JSON-LD wire projection only |
 
 Live ingest (company disclosures / GLEIF / OSM facility geometry) is G7 Council+operator-gated.

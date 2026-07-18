@@ -13,7 +13,7 @@
             [cheshire.core :as j]
             [tatara.methods.analyze :as az]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def repo-root (-> actor-dir .getParentFile .getParentFile))   ; …/<worktree>
 (def lex-dir (io/file repo-root "00-contracts" "lexicons" "com" "etzhayyim" "tatara"))
 (def manifest (io/file actor-dir "manifest.jsonld"))

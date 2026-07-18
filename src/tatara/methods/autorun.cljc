@@ -27,7 +27,7 @@
 (def base-as-of 20260617)
 
 #?(:clj (def here (-> *file* io/file .getAbsoluteFile .getParentFile)))
-#?(:clj (def data (when here (io/file (.getParentFile here) "data"))))
+#?(:clj (def data (when here (io/file (-> here .getParentFile .getParentFile .getParentFile) "data"))))
 #?(:clj (def merged (when data (io/file data "plant-graph.merged.kotoba.edn"))))
 #?(:clj (def seed (when data (io/file data "seed-plant-graph.kotoba.edn"))))
 #?(:clj (def log-default (when data (io/file data "tatara.datoms.kotoba.edn"))))

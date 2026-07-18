@@ -11,7 +11,7 @@
             [tatara.methods.analyze :as az]
             [tatara.methods.kotoba :as kt]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def seed (io/file actor-dir "data" "seed-plant-graph.kotoba.edn"))
 
 (defn rows [] (az/load-edn seed))

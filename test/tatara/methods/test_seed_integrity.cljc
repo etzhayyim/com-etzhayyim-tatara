@@ -12,7 +12,7 @@
             [clojure.set]
             [tatara.methods.analyze :as az]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def seed (io/file actor-dir "data" "seed-plant-graph.kotoba.edn"))
 (def ontology (io/file (.getParentFile (.getParentFile actor-dir))
                        "00-contracts" "schemas" "manufacturing-plant-ontology.kotoba.edn"))

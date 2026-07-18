@@ -10,7 +10,7 @@
             [tatara.methods.autorun :as ar]
             [tatara.methods.kotoba :as kt]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def seed (io/file actor-dir "data" "seed-plant-graph.kotoba.edn"))
 (defn- tmp [] (io/file actor-dir "out" "test-autorun-log.edn"))
 

@@ -1,0 +1,4 @@
+{:paths ["src" "test"]
+ :tasks
+ {test {:doc "Run the standalone tatara test suite"
+        :task (load-file "run_tests.clj")}}}

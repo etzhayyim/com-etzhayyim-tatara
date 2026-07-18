@@ -11,7 +11,7 @@
             [tatara.methods.crosscheck :as cc]
             [tatara.methods.maturity :as mat]))
 
-(def actor-dir (-> *file* io/file .getParentFile .getParentFile))
+(def actor-dir (-> *file* io/file .getParentFile .getParentFile .getParentFile .getParentFile))
 (def seed (io/file actor-dir "data" "seed-plant-graph.kotoba.edn"))
 (def kab-seed (io/file (.getParentFile actor-dir) "kabuto" "data" "seed-public-companies.kotoba.edn"))
 
